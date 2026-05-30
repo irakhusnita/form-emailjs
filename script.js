@@ -12,24 +12,23 @@ function cekStatusAdmin(){
     status.style.color = "#e74c3c";
   }
 }
-
 cekStatusAdmin();
 
 document.getElementById("formKontak").addEventListener("submit", function(e){
   e.preventDefault();
 
   emailjs.send("service_l0zgukg", "template_pc6assg", {
-    name: document.getElementById("name").value,
+    name: document.getElementById("nama").value,
     email: document.getElementById("email").value,
-    message: document.getElementById("message").value
+    message: document.getElementById("pesan").value
   })
   .then(function(){
     document.getElementById("popup").style.display = "block";
     document.getElementById("formKontak").reset();
   })
   .catch(function(error){
-    console.log("ERROR:", error);
-    alert("Gagal mengirim pesan. Cek Service ID, Template ID, atau Public Key.");
+    console.log(error);
+    alert("Gagal mengirim. Cek template/service EmailJS.");
   });
 });
 
