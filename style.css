@@ -1,16 +1,20 @@
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:'Segoe UI',Arial,sans-serif;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c3f0ca,#7bd389);
-  background-size:400% 400%;
-  animation:bgMove 10s ease infinite;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(129,199,132,.45), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(174,213,129,.45), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(77,182,172,.35), transparent 35%),
+    linear-gradient(135deg,#f1fff5,#d7f8df,#b7e8c4);
+  background-size:200% 200%;
+  animation:waterMove 12s ease-in-out infinite;
 }
 
-@keyframes bgMove{
+@keyframes waterMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
@@ -18,58 +22,82 @@ body{
 
 .chat-card{
   width:90%;
-  max-width:430px;
-  background:#f0fdf4;
-  padding:20px;
-  border-radius:20px;
-  box-shadow:0 15px 35px rgba(0,0,0,.2);
-  animation:slideUp .8s ease;
+  max-width:440px;
+  padding:24px;
+  border-radius:28px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(14px);
+  box-shadow:0 20px 45px rgba(0,80,40,.22);
+  border:1px solid rgba(255,255,255,.6);
+  animation:floatIn .9s ease;
 }
 
-@keyframes slideUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:translateY(0)}
+@keyframes floatIn{
+  from{opacity:0;transform:translateY(45px) scale(.96)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
 
 h2{
   text-align:center;
   color:#075e54;
+  margin-bottom:5px;
 }
 
 #statusAdmin{
   text-align:center;
   font-weight:bold;
+  margin-bottom:18px;
 }
 
 .bubble{
-  background:#dcf8c6;
-  padding:12px;
-  border-radius:18px;
+  background:linear-gradient(135deg,#dcf8c6,#f4fff0);
+  padding:13px 15px;
+  border-radius:20px 20px 20px 5px;
   margin:10px 0;
+  color:#235c3b;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+  animation:bubbleIn .8s ease;
+}
+
+@keyframes bubbleIn{
+  from{opacity:0;transform:translateX(-25px)}
+  to{opacity:1;transform:translateX(0)}
 }
 
 input,textarea{
   width:100%;
-  padding:12px;
-  margin:8px 0;
-  border:1px solid #ccc;
-  border-radius:15px;
+  padding:13px;
+  margin:9px 0;
+  border:1px solid rgba(46,125,50,.25);
+  border-radius:18px;
   box-sizing:border-box;
   outline:none;
+  background:rgba(255,255,255,.85);
+  transition:.3s;
+}
+
+input:focus,textarea:focus{
+  border-color:#25d366;
+  box-shadow:0 0 0 4px rgba(37,211,102,.15);
 }
 
 button{
   width:100%;
-  padding:12px;
-  background:#25d366;
+  padding:13px;
+  margin-top:8px;
+  background:linear-gradient(135deg,#25d366,#128c7e);
   color:white;
   border:none;
-  border-radius:20px;
+  border-radius:22px;
   cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
+  box-shadow:0 8px 18px rgba(18,140,126,.3);
 }
 
 button:hover{
-  background:#1ebe5d;
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(18,140,126,.4);
 }
 
 #popup{
@@ -81,10 +109,17 @@ button:hover{
 }
 
 .popup-box{
-  background:white;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
   width:300px;
   margin:30vh auto;
   padding:25px;
-  border-radius:18px;
+  border-radius:24px;
   text-align:center;
+  animation:pop .3s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
