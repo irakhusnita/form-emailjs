@@ -19,9 +19,9 @@ document.getElementById("formKontak").addEventListener("submit", function(e){
   e.preventDefault();
 
   emailjs.send("service_l0zgukg", "template_pc6assg", {
-    nama: document.getElementById("nama").value,
+    name: document.getElementById("name").value,
     email: document.getElementById("email").value,
-    pesan: document.getElementById("pesan").value
+    message: document.getElementById("message").value
   })
   .then(function(){
     document.getElementById("popup").style.display = "block";
