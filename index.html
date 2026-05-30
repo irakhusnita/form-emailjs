@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan Informasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-card">
+  <h2>💬 Layanan Informasi</h2>
+  <p id="statusAdmin">Memuat status...</p>
+
+  <div class="bubble">👋 Halo, silakan kirim pesan Anda.</div>
+  <div class="bubble">📧 Pesan akan diteruskan ke admin.</div>
+
+  <form id="formKontak">
+    <input type="text" id="nama" placeholder="Nama" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="pesan" rows="4" placeholder="Tulis pesan..." required></textarea>
+    <button type="submit">Kirim Pesan</button>
+  </form>
+</div>
+
+<div id="popup">
+  <div class="popup-box">
+    <h3>✅ Terima Kasih</h3>
+    <p>Pesan berhasil dikirim.</p>
+    <button onclick="closePopup()">Tutup</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
