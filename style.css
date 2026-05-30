@@ -1,0 +1,90 @@
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(-45deg,#d4fc79,#96e6a1,#c3f0ca,#7bd389);
+  background-size:400% 400%;
+  animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.chat-card{
+  width:90%;
+  max-width:430px;
+  background:#f0fdf4;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+  animation:slideUp .8s ease;
+}
+
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h2{
+  text-align:center;
+  color:#075e54;
+}
+
+#statusAdmin{
+  text-align:center;
+  font-weight:bold;
+}
+
+.bubble{
+  background:#dcf8c6;
+  padding:12px;
+  border-radius:18px;
+  margin:10px 0;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:15px;
+  box-sizing:border-box;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#25d366;
+  color:white;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#1ebe5d;
+}
+
+#popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:999;
+}
+
+.popup-box{
+  background:white;
+  width:300px;
+  margin:30vh auto;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+}
